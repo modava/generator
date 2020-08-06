@@ -52,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="row">
                     <div class="col-sm">
                         <div class="table-wrap">
-                            <div class="dataTables_wrapper dt-bootstrap4">
+                            <div class="dataTables_wrapper dt-bootstrap4 table-responsive">
                                 <?php if ($generator->indexWidgetType === 'grid'): ?>
 <?= "<?= " ?>GridView::widget([
                                     'dataProvider' => $dataProvider,
