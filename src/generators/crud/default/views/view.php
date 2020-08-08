@@ -98,6 +98,8 @@ $this->params['breadcrumbs'][] = $this->title;
                         [
                             'attribute' => 'language',
                             'value' => function ($model) {
+                                if($mode->language == null)
+                                    return null;
                                 return Yii::$app->getModule('<?= $generator->messageCategory ?>')->params['availableLocales'][$model->language];
                             },
                         ],
