@@ -40,8 +40,8 @@ foreach ($generator->getColumnNames() as $attribute) {
 }
 ?>
     <div class="form-group">
-        <?= "<?= " ?>Html::submitButton(<?= $generator->generateString('Search') ?>, ['class' => 'btn btn-primary']) ?>
-        <?= "<?= " ?>Html::resetButton(<?= $generator->generateString('Reset') ?>, ['class' => 'btn btn-default']) ?>
+        <?= "<?= " ?>Html::submitButton(<?= ucfirst($generator->messageCategory) ?>Module::t('<?= $generator->messageCategory ?>','Search.'), ['class' => 'btn btn-primary']) ?>
+        <?= "<?= " ?>Html::resetButton(<?= ucfirst($generator->messageCategory) ?>Module::t('<?= $generator->messageCategory ?>','Reset'), ['class' => 'btn btn-default']) ?>
     </div>
 
     <?= "<?php " ?>ActiveForm::end(); ?>

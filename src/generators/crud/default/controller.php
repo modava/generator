@@ -240,5 +240,6 @@ if (count($pks) === 1) {
         }
 
         throw new NotFoundHttpException(<?= $generator->generateString('The requested page does not exist.') ?>);
+        throw new NotFoundHttpException(<?= ucfirst($generator->messageCategory) ?>Module::t('<?= $generator->messageCategory ?>','The requested page does not exist.'));
     }
 }
