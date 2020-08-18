@@ -29,7 +29,6 @@ use backend\widgets\ToastrWidget;
 $this->title = <?= ucfirst($generator->messageCategory) ?>Module::t('<?= $generator->messageCategory ?>', '<?= Inflector::pluralize(Inflector::camel2words($modelClass)) ?>');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<?= "<?=" ?> ToastrWidget::widget(['key' => 'toastr-' . $searchModel->toastr_key . '-index']) <?= "?>\n" ?>
 <div class="container-fluid px-xxl-25 px-xl-10">
     <?= "<?=" ?> NavbarWidgets::widget(); ?>
 
@@ -49,6 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <section class="hk-sec-wrapper">
 
                 <?= $generator->enablePjax ? "<?php Pjax::begin(); ?>\n" : '' ?>
+                <?= "<?=" ?> ToastrWidget::widget(['key' => 'toastr-' . $searchModel->toastr_key . '-index']) <?= "?>\n" ?>
                 <div class="row">
                     <div class="col-sm">
                         <div class="table-wrap">
