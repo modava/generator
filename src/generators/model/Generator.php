@@ -951,38 +951,4 @@ class Generator extends \yii\gii\Generator
 
         return false;
     }
-
-    /**
-     * Generates a string depending on enableI18N property
-     *
-     * @param string $string the text be generated
-     * @param array $placeholders the placeholders to use by `Yii::t()`
-     * @return string
-     */
-    public function generateString($string = '', $placeholders = [])
-    {
-        $string = addslashes($string);
-        if ($this->enableI18N) {
-            // If there are placeholders, use them
-            if (!empty($placeholders)) {
-                $ph = ', ' . VarDumper::export($placeholders);
-            } else {
-                $ph = '';
-            }
-            $str = ucfirst($this->messageCategory) . "Module::t('" . $this->messageCategory . "', '" . $string . "'" . $ph . ")";
-        } else {
-            // No I18N, replace placeholders by real words, if any
-            if (!empty($placeholders)) {
-                $phKeys = array_map(function($word) {
-                    return '{' . $word . '}';
-                }, array_keys($placeholders));
-                $phValues = array_values($placeholders);
-                $str = "'" . str_replace($phKeys, $phValues, $string) . "'";
-            } else {
-                // No placeholders, just the given string
-                $str = "'" . $string . "'";
-            }
-        }
-        return $str;
-    }
 }

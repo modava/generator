@@ -39,7 +39,7 @@ class <?= $className ?> extends Module implements BootstrapInterface
     public function init()
     {
         // custom initialization code goes here
-        $this->registerTranslations();
+        // $this->registerTranslations();
         parent::init();
         Yii::configure($this, require(__DIR__ . '/config/<?= $generator->moduleID ?>.php'));
         $handler = $this->get('errorHandler');
@@ -60,7 +60,7 @@ class <?= $className ?> extends Module implements BootstrapInterface
         });
     }
 
-    public function registerTranslations()
+    /*public function registerTranslations()
     {
         Yii::$app->i18n->translations['<?= $generator->moduleID ?>/messages/*'] = [
             'class' => 'yii\i18n\PhpMessageSource',
@@ -75,5 +75,5 @@ class <?= $className ?> extends Module implements BootstrapInterface
     public static function t($category, $message, $params = [], $language = null)
     {
         return Yii::t('<?= $generator->moduleID ?>/messages/' . $category, $message, $params, $language);
-    }
+    }*/
 }

@@ -8,11 +8,13 @@ use yii\helpers\StringHelper;
 
 $modelClass = StringHelper::basename($generator->modelClass);
 $ns = explode('\\', $generator->modelClass)[0];
+$alias = $generator->getYiiAlias();
 
 echo "<?php\n";
 ?>
 
-use <?= $ns ?>\<?= $generator->messageCategory ?>\widgets\NavbarWidgets;
+use Yii;
+use <?= $alias ?>widgets\NavbarWidgets;
 use yii\helpers\Html;
 use <?= $ns ?>\<?= $generator->messageCategory ?>\<?= ucfirst($generator->messageCategory) ?>Module;
 
@@ -20,8 +22,8 @@ use <?= $ns ?>\<?= $generator->messageCategory ?>\<?= ucfirst($generator->messag
 /* @var $this yii\web\View */
 /* @var $model <?= ltrim($generator->modelClass, '\\') ?> */
 
-$this->title = <?= ucfirst($generator->messageCategory) ?>Module::t('<?= $generator->messageCategory ?>', 'Create');
-$this->params['breadcrumbs'][] = ['label' => <?= ucfirst($generator->messageCategory) ?>Module::t('<?= $generator->messageCategory ?>', '<?= Inflector::pluralize(Inflector::camel2words($modelClass)) ?>'), 'url' => ['index']];
+$this->title = Yii::t('<?= $generator->messageCategory ?>', 'Create');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('<?= $generator->messageCategory ?>', '<?= Inflector::pluralize(Inflector::camel2words($modelClass)) ?>'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="container-fluid px-xxl-25 px-xl-10">

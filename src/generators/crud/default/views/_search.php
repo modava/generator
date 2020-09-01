@@ -9,6 +9,7 @@ use yii\helpers\StringHelper;
 echo "<?php\n";
 ?>
 
+use Yii;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -40,8 +41,8 @@ foreach ($generator->getColumnNames() as $attribute) {
 }
 ?>
     <div class="form-group">
-        <?= "<?= " ?>Html::submitButton(<?= ucfirst($generator->messageCategory) ?>Module::t('<?= $generator->messageCategory ?>','Search.'), ['class' => 'btn btn-primary']) ?>
-        <?= "<?= " ?>Html::resetButton(<?= ucfirst($generator->messageCategory) ?>Module::t('<?= $generator->messageCategory ?>','Reset'), ['class' => 'btn btn-default']) ?>
+        <?= "<?= " ?>Html::submitButton(Yii::t('<?= $generator->messageCategory ?>','Search.'), ['class' => 'btn btn-primary']) ?>
+        <?= "<?= " ?>Html::resetButton(Yii::t('<?= $generator->messageCategory ?>','Reset'), ['class' => 'btn btn-default']) ?>
     </div>
 
     <?= "<?php " ?>ActiveForm::end(); ?>

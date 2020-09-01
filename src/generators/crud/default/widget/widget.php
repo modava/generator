@@ -1,10 +1,11 @@
 <?php
 /* @var $generator yii\gii\generators\crud\Generator */
 $ns = explode('\\', $generator->modelClass)[0];
+$alias = $generator->getYiiAlias();
 echo "<?php";
 ?>
 
-namespace <?= $ns ?>\<?= $generator->messageCategory ?>\widgets;
+namespace <?= $alias ?>widgets;
 
 class NavbarWidgets extends \yii\base\Widget
 {

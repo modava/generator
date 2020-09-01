@@ -18,6 +18,7 @@ $ns = explode('\\', $generator->modelClass)[0];
 echo "<?php\n";
 ?>
 
+use Yii;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
@@ -41,7 +42,7 @@ use <?= $ns ?>\<?= $generator->messageCategory ?>\<?= ucfirst($generator->messag
 <?= "\t\t<?= " ?>$form->field($model, 'status')->checkbox() ?>
 <?php } ?>
         <div class="form-group">
-            <?= "<?=" ?> Html::submitButton(<?= ucfirst($generator->messageCategory) ?>Module::t('<?= $generator->messageCategory ?>', 'Save'), ['class' => 'btn btn-success']) ?>
+            <?= "<?=" ?> Html::submitButton(Yii::t('<?= $generator->messageCategory ?>', 'Save'), ['class' => 'btn btn-success']) ?>
         </div>
 
     <?= "<?php" ?> ActiveForm::end(); ?>
