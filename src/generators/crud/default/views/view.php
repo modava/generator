@@ -9,6 +9,7 @@ use yii\helpers\StringHelper;
 $urlParams = $generator->generateUrlParams();
 $modelClass = StringHelper::basename($generator->modelClass);
 $ns = explode('\\', $generator->modelClass)[0];
+$alias = $generator->getYiiAlias();
 
 echo "<?php\n";
 ?>
@@ -18,8 +19,7 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 use backend\widgets\ToastrWidget;
-use <?= $ns ?>\<?= $generator->messageCategory ?>\widgets\NavbarWidgets;
-use <?= $ns ?>\<?= $generator->messageCategory ?>\<?= ucfirst($generator->messageCategory) ?>Module;
+use <?= $alias ?>widgets\NavbarWidgets;
 
 /* @var $this yii\web\View */
 /* @var $model <?= ltrim($generator->modelClass, '\\') ?> */
@@ -89,7 +89,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         [
                             'attribute' => 'status',
                             'value' => function ($model) {
-                                return Yii::$app->getModule('<?= $generator->messageCategory ?>')->params['status'][$model->status];
+                                return Yii::$app->params['status'][$model->status];
                             }
                         ],
 <?php

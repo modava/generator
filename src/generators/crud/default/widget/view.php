@@ -12,7 +12,6 @@ $alias = $generator->getYiiAlias();
 echo "<?php";
 ?>
 
-use Yii;
 use yii\helpers\Url;
 
 ?>

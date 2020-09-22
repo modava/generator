@@ -4,8 +4,6 @@ $ns = explode('\\', $generator->moduleClass)[0];
 ?>
 <?= "<?php" ?>
 
-use <?= $ns ?>\<?= $generator->moduleID ?>\<?= ucfirst($generator->moduleID) ?>Module;
-
 return [
     /*'<?= $generator->moduleID ?>Name' => '<?= ucfirst($generator->moduleID) ?>',
     '<?= $generator->moduleID ?>Version' => '1.0',

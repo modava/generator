@@ -16,7 +16,6 @@ echo "<?php\n";
 use Yii;
 use <?= $alias ?>widgets\NavbarWidgets;
 use yii\helpers\Html;
-use <?= $ns ?>\<?= $generator->messageCategory ?>\<?= ucfirst($generator->messageCategory) ?>Module;
 
 
 /* @var $this yii\web\View */

@@ -24,7 +24,6 @@ echo "<?php\n"; ?>
 namespace <?= $generator->ns ?>;
 
 use common\models\User;
-use <?= str_replace('\models', '', $generator->ns) ?>\<?= ucfirst($generator->messageCategory) ?>Module;
 use <?= $generator->ns ?>\table\<?= $modelClass ?>Table;
 <?php if (isset($tableSchema->columns['created_by']) && isset($tableSchema->columns['updated_by'])) { ?>
 use yii\behaviors\BlameableBehavior;
