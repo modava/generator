@@ -21,6 +21,7 @@ echo "<?php\n";
 
 namespace <?= $generator->ns ?>\table;
 
+use backend\components\MyModel;
 use cheatsheet\Time;
 <?php if(isset($columns['status'])) { ?>
 use <?= $generator->ns ?>\query\<?= $className ?>Query;
@@ -28,7 +29,7 @@ use <?= $generator->ns ?>\query\<?= $className ?>Query;
 use Yii;
 use yii\db\ActiveRecord;
 
-class <?= $className ?>Table extends <?= '\\' . ltrim($generator->baseClass, '\\') . "\n" ?>
+class <?= $className ?>Table extends MyModel
 {
 <?php if(isset($columns['status'])) { ?>
     const STATUS_DISABLED = 0;

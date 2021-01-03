@@ -14,7 +14,6 @@ $alias = $generator->getYiiAlias();
 echo "<?php\n";
 ?>
 
-use Yii;
 use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
@@ -39,12 +38,12 @@ $this->params['breadcrumbs'][] = $this->title;
                         class="ion ion-md-apps"></span></span><?= "<?=" ?>Yii::t('<?= $generator->messageCategory ?>', 'Chi tiết'); ?>: <?= "<?=" ?> Html::encode($this->title) ?>
         </h4>
         <p>
-            <a class="btn btn-outline-light" href="<?= "<?=" ?> Url::to(['create']); ?>"
+            <a class="btn btn-sm btn-outline-light" href="<?= "<?=" ?> Url::to(['create']); ?>"
                 title="<?= "<?=" ?> Yii::t('<?= $generator->messageCategory ?>', 'Create'); <?= "?>" ?>">
                 <i class="fa fa-plus"></i> <?= "<?=" ?> Yii::t('<?= $generator->messageCategory ?>', 'Create'); <?= "?>" ?></a>
-            <?= "<?=" ?> Html::a(Yii::t('<?= $generator->messageCategory ?>', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) <?= "?>\n" ?>
+            <?= "<?=" ?> Html::a(Yii::t('<?= $generator->messageCategory ?>', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary btn-sm']) <?= "?>\n" ?>
             <?= "<?=" ?> Html::a(Yii::t('<?= $generator->messageCategory ?>', 'Delete'), ['delete', 'id' => $model->id], [
-                'class' => 'btn btn-danger',
+                'class' => 'btn btn-danger btn-sm',
                 'data' => [
                     'confirm' => Yii::t('<?= $generator->messageCategory ?>', 'Are you sure you want to delete this item?'),
                     'method' => 'post',
